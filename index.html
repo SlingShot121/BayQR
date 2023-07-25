@@ -42,7 +42,7 @@
         <!-- More options as required -->
     </select>
 
-    <input class="mx-3" type="text" id="reference-input" placeholder="Reference">
+    <input type="text" id="reference-input" placeholder="Reference">
 
     <script>
         // A function that parses URL parameters
@@ -63,6 +63,14 @@
             }
         }
 
+        // Mock reference values
+        var referenceValues = {
+            '1': 'Reference for 1',
+            '2': 'Reference for 2',
+            '3': 'Reference for 3',
+            // Add more as needed
+        };
+
         // Usage
         window.onload = function () {
             var bay = getUrlParameter('bay');
@@ -70,7 +78,7 @@
             var selectElement = document.getElementById('bays-id-503891');
             var inputElement = document.getElementById('reference-input');
             setSelectedOption(selectElement, bay);
-            inputElement.value = ref;
+            inputElement.value = referenceValues[ref];
         }
     </script>
 
