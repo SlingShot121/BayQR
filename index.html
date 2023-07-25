@@ -1,35 +1,58 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
 
     <title>Bays</title>
 </head>
+
 <body style="background-color: #292929;">
-    <div class="d-flex justify-content-center align-items-center">
-        <table class="table table-striped table-dark" style="font-size: xx-large;">
-            <thead>
-                <tr>
-                    <th scope="col">Bays</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <th scope="row"><a href="alert.html">C6</a></th>
-                </tr>
-                <tr>
-                    <th scope="row"><a href="c7.html">C7</a></th>
-                </tr>
-                <tr>
-                    <th scope="row"><a href="c8.html">C8</a></th>
-                </tr>
-            </tbody>
-        </table>
-    </div>
+    <select id="bays-id-503891">
+        <option value="c1">Bay C1</option>
+        <option value="c2">Bay C2</option>
+        <option value="c3">Bay C3</option>
+        <option value="c4">Bay C4</option>
+        <option value="c5">Bay C5</option>
+        <option value="c6">Bay C6</option>
+        <!-- More options as required -->
+    </select>
+
+    <script>
+        // A function that parses URL parameters
+        function getUrlParameter(name) {
+            name = name.replace(/[\[]/, '\\[').replace(/[\]]/, '\\]');
+            var regex = new RegExp('[\\?&]' + name + '=([^&#]*)');
+            var results = regex.exec(location.search);
+            return results === null ? '' : decodeURIComponent(results[1].replace(/\+/g, ' '));
+        };
+
+        // The function that sets the selected option of the dropdown
+        function setSelectedOption(selectElement, valueToSet) {
+            for (var i = 0; i < selectElement.options.length; i++) {
+                if (selectElement.options[i].value == valueToSet) {
+                    selectElement.options[i].selected = true;
+                    return;
+                }
+            }
+        }
+
+        // Usage
+        window.onload = function () {
+            var bay = getUrlParameter('bay');
+            var selectElement = document.getElementById('bays-id-503891');
+            setSelectedOption(selectElement, bay);
+        }
+    </script>
+
 </body>
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+    crossorigin="anonymous"></script>
+
 </html>
