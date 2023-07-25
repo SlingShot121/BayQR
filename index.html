@@ -11,12 +11,18 @@
     <style>
         body {
             display: flex;
-            flex-direction: column;
             justify-content: center;
             align-items: center;
             height: 100vh;
             background-color: #292929;
             color: white;
+            flex-direction: column;
+        }
+
+        .container {
+            display: flex;
+            justify-content: space-between;
+            width: 500px;
         }
 
         #bays-id-503891, #reference-input {
@@ -25,11 +31,7 @@
             font-size: 20px;
             color: white;
             background-color: #444;
-            margin-bottom: 20px;
-        }
-
-        .header {
-            margin-bottom: 10px;
+            margin-top: 10px;
         }
     </style>
 
@@ -37,19 +39,25 @@
 </head>
 
 <body>
-    <h2 class="header">Bay Management Tab Bay #</h2>
-    <select id="bays-id-503891">
-        <option value="c1">Bay C1</option>
-        <option value="c2">Bay C2</option>
-        <option value="c3">Bay C3</option>
-        <option value="c4">Bay C4</option>
-        <option value="c5">Bay C5</option>
-        <option value="c6">Bay C6</option>
-        <!-- More options as required -->
-    </select>
+    <div class="container">
+        <div>
+            <h2>Bay Management Tab Bay #</h2>
+            <select id="bays-id-503891">
+                <option value="c1">Bay C1</option>
+                <option value="c2">Bay C2</option>
+                <option value="c3">Bay C3</option>
+                <option value="c4">Bay C4</option>
+                <option value="c5">Bay C5</option>
+                <option value="c6">Bay C6</option>
+                <!-- More options as required -->
+            </select>
+        </div>
 
-    <h2 class="header">Control Tower Search Input</h2>
-    <input class="mx-3" type="text" id="reference-input" placeholder="Reference">
+        <div>
+            <h2>Control Tower Search Input</h2>
+            <input type="text" id="reference-input" placeholder="Reference">
+        </div>
+    </div>
 
     <script>
         // A function that parses URL parameters
