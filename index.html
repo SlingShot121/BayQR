@@ -18,12 +18,13 @@
             color: white;
         }
 
-        #bays-id-503891 {
+        #bays-id-503891, #reference-input {
             width: 200px;
             height: 50px;
             font-size: 20px;
             color: white;
             background-color: #444;
+            margin-bottom: 20px;
         }
     </style>
 
@@ -40,6 +41,8 @@
         <option value="c6">Bay C6</option>
         <!-- More options as required -->
     </select>
+
+    <input type="text" id="reference-input" placeholder="Reference">
 
     <script>
         // A function that parses URL parameters
@@ -63,8 +66,11 @@
         // Usage
         window.onload = function () {
             var bay = getUrlParameter('bay');
+            var ref = getUrlParameter('ref');
             var selectElement = document.getElementById('bays-id-503891');
+            var inputElement = document.getElementById('reference-input');
             setSelectedOption(selectElement, bay);
+            inputElement.value = ref;
         }
     </script>
 
