@@ -8,37 +8,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
 
-    <style>
-        body {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            background-color: #292929;
-            color: white;
-            flex-direction: column;
-        }
-
-        .container {
-            display: flex;
-            justify-content: space-between;
-            width: 75vw;
-        }
-
-        #bays-id-503891, #reference-input, #scan-bay-button {
-            width: 200px;
-            height: 50px;
-            font-size: 20px;
-            color: white;
-            background-color: #444;
-            margin-top: 10px;
-        }
-
-        /* Hide the file input */
-        #camera-input {
-            display: none;
-        }
-    </style>
+    <link rel="stylesheet" href="styles.css">
 
     <title>Bays</title>
 </head>
@@ -71,53 +41,12 @@
         </div>
     </div>
 
-    <script>
-        // A function that parses URL parameters
-        function getUrlParameter(name) {
-            name = name.replace(/[\[]/, '\\[').replace(/[\]]/, '\\]');
-            var regex = new RegExp('[\\?&]' + name + '=([^&#]*)');
-            var results = regex.exec(location.search);
-            return results === null ? '' : decodeURIComponent(results[1].replace(/\+/g, ' '));
-        };
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+        crossorigin="anonymous"></script>
 
-        // The function that sets the selected option of the dropdown
-        function setSelectedOption(selectElement, valueToSet) {
-            for (var i = 0; i < selectElement.options.length; i++) {
-                if (selectElement.options[i].value == valueToSet) {
-                    selectElement.options[i].selected = true;
-                    return;
-                }
-            }
-        }
-
-        // Mock reference values
-        var referenceValues = {
-            '1': 'L63798',
-            '2': 'L63549',
-            '3': 'L67898',
-            // Add more as needed
-        };
-
-        // Usage
-        window.onload = function () {
-            var bay = getUrlParameter('bay');
-            var ref = getUrlParameter('ref');
-            var selectElement = document.getElementById('bays-id-503891');
-            var inputElement = document.getElementById('reference-input');
-            setSelectedOption(selectElement, bay);
-            inputElement.value = referenceValues[ref];
-
-            // Open the camera app when the button is clicked
-            document.getElementById('scan-bay-button').addEventListener('click', function() {
-                document.getElementById('camera-input').click();
-            });
-        }
-    </script>
+    <script src="script.js"></script>
 
 </body>
-
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
-    crossorigin="anonymous"></script>
 
 </html>

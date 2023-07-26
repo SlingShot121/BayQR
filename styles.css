@@ -1,0 +1,31 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #292929;
+    color: white;
+    flex-direction: column;
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    width: 75vw;
+}
+
+#bays-id-503891, 
+#reference-input, 
+#scan-bay-button {
+    width: 200px;
+    height: 50px;
+    font-size: 20px;
+    color: white;
+    background-color: #444;
+    margin-top: 10px;
+}
+
+/* Hide the file input */
+#camera-input {
+    display: none;
+}
