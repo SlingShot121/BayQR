@@ -27,9 +27,12 @@ var referenceValues = {
 // When scan is successful function will produce data
 function onScanSuccess(qrCodeMessage) {
     // Stop the scanner
+
+    var currentReference = "L63549"
+
     html5QrCodeScanner.clear().then(() => {
         // Navigate to the URL
-        window.location.href = qrCodeMessage;
+        window.location.href = qrCodeMessage + "?ref=" + currentReference;
     }).catch((err) => {
         console.log(err);
     });
