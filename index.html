@@ -34,11 +34,9 @@
             margin-top: 10px;
         }
 
-        #camera-stream {
-            width: 200px;
-            height: 150px;
-            background-color: #444;
-            margin-top: 10px;
+        /* Hide the file input */
+        #camera-input {
+            display: none;
         }
     </style>
 
@@ -67,8 +65,9 @@
 
         <div class="m-5">
             <h2>Scan Bay</h2>
+            <!-- Add an input element for capturing images -->
+            <input type="file" id="camera-input" accept="image/*" capture="camera">
             <button id="scan-bay-button">Open Camera</button>
-            <video id="camera-stream" autoplay></video>
         </div>
     </div>
 
@@ -108,18 +107,9 @@
             setSelectedOption(selectElement, bay);
             inputElement.value = referenceValues[ref];
 
-            // Camera functionality
-            var video = document.getElementById('camera-stream');
+            // Open the camera app when the button is clicked
             document.getElementById('scan-bay-button').addEventListener('click', function() {
-                if (navigator.mediaDevices.getUserMedia) {
-                    navigator.mediaDevices.getUserMedia({ video: true })
-                        .then(function (stream) {
-                            video.srcObject = stream;
-                        })
-                        .catch(function (error) {
-                            console.log("Something went wrong!");
-                        });
-                }
+                document.getElementById('camera-input').click();
             });
         }
     </script>
