@@ -26,12 +26,13 @@ var referenceValues = {
 
 // When scan is successful function will produce data
 function onScanSuccess(qrCodeMessage) {
-    var a = document.createElement('a');
-    var linkText = document.createTextNode(qrCodeMessage);
-    a.appendChild(linkText);
-    a.title = qrCodeMessage;
-    a.href = qrCodeMessage;
-    document.body.appendChild(a);
+    // Stop the scanner
+    html5QrCodeScanner.clear().then(() => {
+        // Navigate to the URL
+        window.location.href = qrCodeMessage;
+    }).catch((err) => {
+        console.log(err);
+    });
 }
 
 // When scan is unsuccessful function will produce error message
