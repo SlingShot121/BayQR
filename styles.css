@@ -30,6 +30,10 @@ body {
     display: none;
 }
 
-#html5-qrcode-anchor-scan-type-change, #html5-qrcode-select-camera {
+#html5-qrcode-anchor-scan-type-change {
     display: none !important;
+}
+
+#html5-qrcode-select-camera {
+    display: none !important;    
 }
