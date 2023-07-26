@@ -29,3 +29,7 @@ body {
 #camera-input {
     display: none;
 }
+
+#file-selector-label {
+    display: none !important;
+}
