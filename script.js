@@ -26,7 +26,12 @@ var referenceValues = {
 
 // When scan is successful function will produce data
 function onScanSuccess(qrCodeMessage) {
-    alert(qrCodeMessage);
+    var a = document.createElement('a');
+    var linkText = document.createTextNode(qrCodeMessage);
+    a.appendChild(linkText);
+    a.title = qrCodeMessage;
+    a.href = qrCodeMessage;
+    document.body.appendChild(a);
 }
 
 // When scan is unsuccessful function will produce error message
@@ -35,7 +40,7 @@ function onScanError(errorMessage) {
 }
 
 // Setting up Qr Scanner properties
-var html5QrCodeScanner = new Html5QrcodeScanner("reader", { fps: 10, qrbox: 250 });
+var html5QrCodeScanner = new Html5QrcodeScanner("reader", { fps: 10, qrbox: 250 }, /* verbose= */ false, /* disableFlip= */ true);
 
 // Usage
 window.onload = function () {
