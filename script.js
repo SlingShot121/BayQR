@@ -28,7 +28,7 @@ var referenceValues = {
 function onScanSuccess(qrCodeMessage) {
     // Stop the scanner
 
-    var currentReference = "L63549"
+    var currentReference = "2"
 
     html5QrCodeScanner.clear().then(() => {
         // Navigate to the URL
