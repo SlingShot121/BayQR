@@ -24,6 +24,19 @@ var referenceValues = {
     // Add more as needed
 };
 
+// When scan is successful function will produce data
+function onScanSuccess(qrCodeMessage) {
+    alert(qrCodeMessage);
+}
+
+// When scan is unsuccessful function will produce error message
+function onScanError(errorMessage) {
+    console.log(errorMessage);
+}
+
+// Setting up Qr Scanner properties
+var html5QrCodeScanner = new Html5QrcodeScanner("reader", { fps: 10, qrbox: 250 });
+
 // Usage
 window.onload = function () {
     var bay = getUrlParameter('bay');
@@ -35,6 +48,6 @@ window.onload = function () {
 
     // Open the camera app when the button is clicked
     document.getElementById('scan-bay-button').addEventListener('click', function() {
-        document.getElementById('camera-input').click();
+        html5QrCodeScanner.render(onScanSuccess, onScanError);
     });
 }
