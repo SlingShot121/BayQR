@@ -32,7 +32,7 @@ function onScanSuccess(qrCodeMessage) {
 
     html5QrCodeScanner.clear().then(() => {
         // Navigate to the URL
-        window.location.href = qrCodeMessage + "?ref=" + currentReference;
+        window.location.href = qrCodeMessage + "&ref=" + currentReference;
     }).catch((err) => {
         console.log(err);
     });
